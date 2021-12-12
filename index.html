@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boostrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Group 4 assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="sql">Group Four SQL assignmet</h1>
+    <p>Before proceeding to the assignment we need to firstly understand the some keywords in structural query Language that we are going ton use here.
+        and also you can learn how to download mysql server and workbench <a href="https://www.youtube.com/watch?v=OM4aZJW_Ojs" target="_blank"> here</a>
+    </p>
+     <h4>The procedure</h4>
+        <ul>
+            <li>creating a table which contain list of students in our group</li>
+            <li>each students has an attributes (id, first_name, Last_name, Salary, Join_Date, Department)</li>
+                <li>Each attributes has a format (id : int auto_increment, First_name : Varchar()...etc)
+                <li>The table must not exceed to list of students</li>
+        </ul>
+
+        <h3>Creating a table for group four</h3>
+        Create a table with the name <span>SAMPLE_GROUP_FOUR</span>
+        <img src="/carbon.png" alt="image create sampel group four"><br/>
+        Looking at the image above creating a table, we set datatype of each value, for example <span>Group_id</span>, INT(3) ZEROFILL, this means it must be three integer digit and AUTO_INCREMENT means it increases automatically when inserting a new row in to the table.
+ You can learn more about datatype <a href="https://www.w3schools.com/sql/" target="_blank"> here</a>
+ 
+ <h3>INSERTING DATA IN TO THE EMPTY TABLE</h3>
+ We have an empty table <span>SAMPLE_GROUP_FOUR</span> <br/>
+ To insert a single row in to the table we are going to use the keyword <span>INSERT ... INTO</span>
+ <img src="carbon1.png" alt=""> <br>
+ <h4>Now let's check the content of our table</h4>
+ To check the content of the table we use the word <span>SELECT ... FROM</span>
+ <img src="carbon2.png" alt=""> <br>
+ From the image illustrated above, the <span>(*)</span> used above means "all", that is "SELECT ALL FROM SAMPLE_GROUP_FOUR". <br>
+ All the content of the table of the SAMPLE_GROUP_FOUR will be displayed. Pls, note that we have only one document currengtly because we inserted only a row. <br>
+ Expected output  <br>
+ <img src="output.PNG" alt=""> <br>
+ Now that we have an active Table with data let's proceed with the Questions.
+ We firstly insert the rest rows to make sure it's complete Eight rows as dictated
+ <img src="list.png" alt=""> <br>
+ Group list table  <br>
+ <img src="goup_list.png" alt="" id="inter">
+<h2>Question 1</h2> 
+<h5>Write SQL to print the first name</h5>
+<p>Lol, Easy peasy lemon squeezy right ?  <br>
+<span>Solution</span>
+we are going to use the <span>SELECT First_name FROM SAMPLE_GROUP_FOUR</span>. that's all.</p>
+<img src="first_name.PNG" alt="" id="inter">
+<h2>Question 2</h2>
+<h5>Write query to display the first three characters of First name in the group</h5>
+<p>Here we use the code  <span>SELECT substring(First_name, 1,3) FROM SAMPLE_GROUP_FOUR;</span></p> <br>
+<img src="three.PNG" alt="" id="inter">
+<h2>Question 3</h2>
+<h5>Print out intersecting records of two tables</h5>
+<p>We are going to create another table <span>SECOND_TABLE</span>, and then compare and print out the intersection records</p> <br>
+Our <span> SECOND_TABLE</span> output <br>
+<img src="output_list.PNG" alt="">
+<h5>Number of tables in our databases</h5>
+<img src="tables.PNG" alt=""> <br>
+we are going to compare the two tables : <span>SECOND_TABLE</span> and <span>SAMPLE_GROUP_FOUR</span> records and display the intersecting records. <br>
+To check which colum has the same First_name , we use <span> SELECT DISTINCT First_name FROM SAMPLE_GROUP_FOUR INNER JOIN SECOND_TABLE USING (First_name); </span>
+<img src="first_name1.png" alt=""> <br>
+ <span>Result</span> <br>
+ <img src="result.PNG" alt=""><br>
+ To check which colum has the same Lastt_name , we use similar method, just change (First_name to Last_name) <span>  SELECT DISTINCT Last_name FROM SAMPLE_GROUP_FOUR INNER JOIN SECOND_TABLE USING (Last_name); </span> <br>
+ <img src="last_name.png" alt=""><br>
+ <span>Result</span> <br>
+ <img src="res.PNG" alt="">
+</body>
+<footer>
+    Thanks for reading...! You can drop any question the Group.
+</footer>
+</html>
